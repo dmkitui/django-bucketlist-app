@@ -26,9 +26,9 @@ class UserModelTestCase(TestCase):
 
     def test_creation_of_new_user(self):
         """Test it can create a new user"""
-        current_count = User.Objects.count()
+        current_count = User.objects.count()
         self.new_user.save()
-        new_count = User.Objects.count()
+        new_count = User.objects.count()
         self.assertNotEqual(current_count, new_count)
 
 
