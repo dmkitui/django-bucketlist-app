@@ -22,7 +22,7 @@ class UserModelTestCase(TestCase):
     def setUp(self):
         """Setup the users model"""
         self.user_name = 'OptimusPrime'
-        self.new_user = User(name=self.user_name)
+        self.new_user = User(user_name=self.user_name)
 
     def test_creation_of_new_user(self):
         """Test it can create a new user"""
