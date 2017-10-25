@@ -13,5 +13,5 @@ class Bucketlists(models.Model):
 
 class User(models.Model):
     """The User model"""
-    name = models.CharField(max_length=255, blank=False, unique=True)
+    user_name = models.CharField(max_length=255, blank=False, unique=True)
     date_registered = models.DateTimeField(auto_now_add=True)
