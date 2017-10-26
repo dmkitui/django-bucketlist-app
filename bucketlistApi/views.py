@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from rest_framework import generics
-from .serializers import BucketlistsSerializer, UserSerializer
+from .serializers import BucketlistsSerializer
 from .models import Bucketlists
 
 
