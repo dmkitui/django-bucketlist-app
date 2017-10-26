@@ -10,8 +10,3 @@ class Bucketlists(models.Model):
     def __str__(self):
         """Return a human readable representation of the model instance."""
         return "{}".format(self.name)
-
-class User(models.Model):
-    """The User model"""
-    user_name = models.CharField(max_length=255, blank=False, unique=True)
-    date_registered = models.DateTimeField(auto_now_add=True)
