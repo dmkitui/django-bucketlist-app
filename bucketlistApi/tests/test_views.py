@@ -55,4 +55,4 @@ class ViewTestCase(TestCase):
         # Use a user id for a use that does not exist.
         res = fresh_client.get('/bucketlists/', kwargs={'pk': 801}, format="json")
         print('RES: ', res)
-        self.assertEqual(res.status_code, status.HTTP_401_UNAUTHORIZED)
+        self.assertEqual(res.status_code, status.HTTP_403_FORBIDDEN)
