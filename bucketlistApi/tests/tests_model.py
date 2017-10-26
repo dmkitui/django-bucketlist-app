@@ -1,5 +1,6 @@
 from django.test import TestCase
-from ..models import Bucketlists, User
+from ..models import Bucketlists
+from django.contrib.auth.models import User
 
 
 class ModelTestCase(TestCase):
@@ -7,8 +8,9 @@ class ModelTestCase(TestCase):
 
     def setUp(self):
         """Define the test client and other test variables."""
+        current_user = User.objects.create(username="OptimusPrime")
         self.bucketlist_name = 'Make the world a better place'
-        self.bucketlist = Bucketlists(name=self.bucketlist_name)
+        self.bucketlist = Bucketlists(name=self.bucketlist_name, owner=current_user)
 
     def test_can_create_a_bucketlist(self):
         """Test the creation of a new bucketlist."""
@@ -17,18 +19,5 @@ class ModelTestCase(TestCase):
         new_count = Bucketlists.objects.count()
         self.assertNotEqual(current_count, new_count)
 
-class UserModelTestCase(TestCase):
-    """Tests for the Users model"""
-    def setUp(self):
-        """Setup the users model"""
-        self.user_name = 'OptimusPrime'
-        self.new_user = User(user_name=self.user_name)
-
-    def test_creation_of_new_user(self):
-        """Test it can create a new user"""
-        current_count = User.objects.count()
-        self.new_user.save()
-        new_count = User.objects.count()
-        self.assertNotEqual(current_count, new_count)
 
 
