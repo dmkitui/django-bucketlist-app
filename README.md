@@ -59,7 +59,13 @@ for line length which is set at 100 characters.
 
 ## Installation
 
-Clone this repo, cd into the directory and run `python manage.py runserver`
+THis application runs on Python 3 or later.
+Clone this repo, cd into the `djangoBucketlist` directory and run the following:
+ 1. python3 manage.py makemigrations
+ 2. python3 manage.py migrate
+ 3. `python manage.py runserver`
+ 
+Access the service at `http://127.0.0.1:8000/bucketlists` in your browser.
 
 ## Usage
 ### Endpoints
